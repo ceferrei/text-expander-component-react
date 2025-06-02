@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+# Text Expander
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, customizable React component for expanding and collapsing text content with smooth animations. Perfect for displaying long content in a user-friendly way while maintaining clean UI design.
 
-## Available Scripts
+## Demo
 
-In the project directory, you can run:
+<div align="center">
+  <!-- Insert your demo video here -->
+  <video src="https://github.com/user-attachments/assets/774e580e-f495-4abb-a4fd-338ac16a18e0" controls width="600">
+    Your browser does not support the video element.
+  </video>
+</div>
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Customizable Word Limit**: Set how many words to show when collapsed (default: 10 words).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Custom Button Text**: Personalize expand/collapse button labels to match your app's tone.
 
-### `npm test`
+- **Flexible Styling**: Support for custom colors, CSS classes, and styling options.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Smooth Animations**: Built-in transitions for a polished user experience.
 
-### `npm run build`
+- **Responsive Design**: Works seamlessly across all device sizes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Accessibility**: Proper focus management and keyboard navigation support.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
 
-### `npm run eject`
+```
+git clone https://github.com/ceferrei/text-expander-component-react.git
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Navigate to the project folder:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+cd text-expander-component-react
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Install dependencies:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+npm install
+```
 
-## Learn More
+4. Start the application:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The app should run at http://localhost:3000 by default.
 
-### Code Splitting
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Basic Usage
 
-### Analyzing the Bundle Size
+```jsx
+import TextExpander from './TextExpander';
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+function App() {
+  return (
+    <TextExpander>
+      Your long text content goes here. This will be truncated to 10 words by default with a "Show more" button to expand.
+    </TextExpander>
+  );
+}
+```
 
 ### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```jsx
+<TextExpander
+  collapsedNumWords={20}
+  expandButtonText="Read more"
+  collapseButtonText="Show less"
+  buttonColor="#ff6622"
+  expanded={false}
+  className="custom-styling"
+>
+  Your content here will show 20 words when collapsed, with custom button text and orange button color.
+</TextExpander>
+```
 
-### Deployment
+### Props
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `collapsedNumWords` | number | 10 | Number of words to show when collapsed |
+| `expandButtonText` | string | "Show more" | Text for the expand button |
+| `collapseButtonText` | string | "Show less" | Text for the collapse button |
+| `buttonColor` | string | "#1f09cd" | Color of the expand/collapse button |
+| `expanded` | boolean | false | Initial expanded state |
+| `className` | string | "" | Additional CSS classes |
+| `children` | string | required | The text content to be expanded/collapsed |
 
-### `npm run build` fails to minify
+## Component Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Zero Dependencies**: Built with pure React, no external libraries required.
+- **TypeScript Ready**: Easily convertible to TypeScript with proper type definitions.
+- **Performance Optimized**: Efficient re-rendering with React hooks.
+- **Mobile Friendly**: Touch-optimized buttons and responsive design.
+
+## License
+
+This project is licensed under the MIT License. Feel free to use it, modify it, and distribute it in any project.
